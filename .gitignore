@@ -3,7 +3,12 @@ dist/
 build/
 
 .env
+.env.local
+
 jest-cache/
 jest-stare/
 
 logs/
+
+.vite/
+.cache/
