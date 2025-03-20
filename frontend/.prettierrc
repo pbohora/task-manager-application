@@ -6,5 +6,6 @@
   "trailingComma": "none",
   "jsxSingleQuote": true,
   "bracketSpacing": true,
-  "useTabs": false
+  "useTabs": false,
+  "vueIndentScriptAndStyle": true
 }
