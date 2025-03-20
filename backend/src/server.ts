@@ -1,7 +1,8 @@
 import app from './app'
+import logger from './utils/logger'
 
-const port: number = 3000;
+const port: number = 3000
 
 app.listen(port, () => {
-  console.log(`Server running on http://localhost:${port}`)
+  logger.info(`Server running on http://localhost:${port}`)
 })
