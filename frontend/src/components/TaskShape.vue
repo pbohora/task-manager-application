@@ -10,7 +10,7 @@
         :stroke="shapeColors[task.type]?.stroke || defaultColors.stroke"
         stroke-width="2"
       >
-        <title>{{ task.title }}</title>
+        <title>{{ task.name }}</title>
       </circle>
 
       <rect
@@ -23,7 +23,7 @@
         :stroke="shapeColors[task.type]?.stroke || defaultColors.stroke"
         stroke-width="2"
       >
-        <title>{{ task.title }}</title>
+        <title>{{ task.name }}</title>
       </rect>
 
       <polygon
@@ -33,7 +33,7 @@
         :stroke="shapeColors[task.type]?.stroke || defaultColors.stroke"
         stroke-width="2"
       >
-        <title>{{ task.title }}</title>
+        <title>{{ task.name }}</title>
       </polygon>
 
       <circle
@@ -45,7 +45,7 @@
         :stroke="defaultColors.stroke"
         stroke-width="2"
       >
-        <title>{{ task.title }}</title>
+        <title>{{ task.name }}</title>
       </circle>
     </g>
   </svg>

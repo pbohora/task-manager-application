@@ -1,6 +1,6 @@
 <template>
   <v-card class="mx-auto" max-width="700">
-    <v-card-title>{{ taskStore.listName }}</v-card-title>
+    <v-card-title>{{ taskStore.taskListName }}</v-card-title>
     <v-list>
       <v-list-item v-for="task in taskStore.tasks" :key="task.id">
         <Task :task="task" />
