@@ -10,11 +10,11 @@
 </template>
 
 <script lang="ts" setup>
-  import { computed } from 'vue'
-  import { useTaskStore } from '../stores/tasks'
+import { computed } from 'vue'
+import { useTaskStore } from '../stores/tasks'
 
-  const taskStore = useTaskStore()
+const taskStore = useTaskStore()
 
-  const error = computed(() => taskStore.error)
-  const isLoading = computed(() => taskStore.loading)
+const error = computed(() => taskStore.error)
+const isLoading = computed(() => taskStore.loading)
 </script>

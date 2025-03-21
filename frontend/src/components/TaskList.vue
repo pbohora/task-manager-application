@@ -10,9 +10,7 @@
 </template>
 
 <script setup lang="ts">
-  import { type Task } from '../types'
+import { useTaskStore } from '../stores/tasks'
 
-  import { useTaskStore } from '../stores/tasks'
-
-  const taskStore = useTaskStore()
+const taskStore = useTaskStore()
 </script>

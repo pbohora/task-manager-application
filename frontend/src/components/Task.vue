@@ -20,12 +20,12 @@
 </template>
 
 <script setup lang="ts">
-  import { type Task } from '../types'
-  import { useTaskStore } from '../stores/tasks'
+import { type Task } from '../types'
+import { useTaskStore } from '../stores/tasks'
 
-  const taskStore = useTaskStore()
+const taskStore = useTaskStore()
 
-  defineProps<{
-    task: Task
-  }>()
+defineProps<{
+  task: Task
+}>()
 </script>

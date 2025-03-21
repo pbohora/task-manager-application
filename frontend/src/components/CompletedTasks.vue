@@ -9,9 +9,9 @@
 </template>
 
 <script setup lang="ts">
-  import { type Task } from '../types'
+import { type Task } from '../types'
 
-  defineProps<{
-    completedTasks: Task[]
-  }>()
+defineProps<{
+  completedTasks: Task[]
+}>()
 </script>

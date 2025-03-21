@@ -44,48 +44,48 @@
 </template>
 
 <script setup lang="ts">
-  import { type Task } from '../types'
+import { type Task } from '../types'
 
-  defineProps<{
-    task: Task
-  }>()
+defineProps<{
+  task: Task
+}>()
 
-  // Task colors
-  const shapeColors = {
-    Circle: {
-      fill: 'var(--circle-fill, #3498db)',
-      stroke: 'var(--circle-stroke, #2980b9)'
-    },
-    Rectangle: {
-      fill: 'var(--rectangle-fill, #e74c3c)',
-      stroke: 'var(--rectangle-stroke, #c0392b)'
-    },
-    Polygon: {
-      fill: 'var(--polygon-fill, #2ecc71)',
-      stroke: 'var(--polygon-stroke, #27ae60)'
-    }
+// Task colors
+const shapeColors = {
+  Circle: {
+    fill: 'var(--circle-fill, #3498db)',
+    stroke: 'var(--circle-stroke, #2980b9)'
+  },
+  Rectangle: {
+    fill: 'var(--rectangle-fill, #e74c3c)',
+    stroke: 'var(--rectangle-stroke, #c0392b)'
+  },
+  Polygon: {
+    fill: 'var(--polygon-fill, #2ecc71)',
+    stroke: 'var(--polygon-stroke, #27ae60)'
   }
+}
 
-  const defaultColors = {
-    fill: 'var(--default-fill, #9b59b6)',
-    stroke: 'var(--default-stroke, #8e44ad)'
-  }
+const defaultColors = {
+  fill: 'var(--default-fill, #9b59b6)',
+  stroke: 'var(--default-stroke, #8e44ad)'
+}
 </script>
 
 <style scoped>
-  .task-shape {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+.task-shape {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-  .task-shape__svg {
-    width: 100px;
-    height: 100px;
-  }
+.task-shape__svg {
+  width: 100px;
+  height: 100px;
+}
 
-  .task-shape__text {
-    font-size: 12px;
-    text-align: center;
-  }
+.task-shape__text {
+  font-size: 12px;
+  text-align: center;
+}
 </style>

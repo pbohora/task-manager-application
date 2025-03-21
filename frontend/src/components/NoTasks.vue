@@ -27,7 +27,7 @@
 </template>
 
 <script setup lang="ts">
-  import { useTaskStore } from '../stores/tasks'
+import { useTaskStore } from '../stores/tasks'
 
-  const taskStore = useTaskStore()
+const taskStore = useTaskStore()
 </script>
