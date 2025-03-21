@@ -1,54 +1,46 @@
 <template>
-  <svg viewBox="0 0 100 100">
-    <g transform="translate(50, 50)">
-      <circle
-        v-if="task.type === 'Circle'"
-        cx="0"
-        cy="0"
-        r="20"
-        :fill="shapeColors[task.type]?.fill || defaultColors.fill"
-        :stroke="shapeColors[task.type]?.stroke || defaultColors.stroke"
-        stroke-width="2"
-      >
-        <title>{{ task.name }}</title>
-      </circle>
-
-      <rect
-        v-else-if="task.type === 'Rectangle'"
-        x="-20"
-        y="-20"
-        width="40"
-        height="40"
-        :fill="shapeColors[task.type]?.fill || defaultColors.fill"
-        :stroke="shapeColors[task.type]?.stroke || defaultColors.stroke"
-        stroke-width="2"
-      >
-        <title>{{ task.name }}</title>
-      </rect>
-
-      <polygon
-        v-else-if="task.type === 'Polygon'"
-        points="0,-20 20,20 -20,20"
-        :fill="shapeColors[task.type]?.fill || defaultColors.fill"
-        :stroke="shapeColors[task.type]?.stroke || defaultColors.stroke"
-        stroke-width="2"
-      >
-        <title>{{ task.name }}</title>
-      </polygon>
-
-      <circle
-        v-else
-        cx="0"
-        cy="0"
-        r="20"
-        :fill="defaultColors.fill"
-        :stroke="defaultColors.stroke"
-        stroke-width="2"
-      >
-        <title>{{ task.name }}</title>
-      </circle>
-    </g>
-  </svg>
+  <div>
+    <svg viewBox="0 0 100 100">
+      <g transform="translate(50, 50)">
+        <circle
+          v-if="task.type === 'Circle'"
+          cx="0"
+          cy="0"
+          r="20"
+          :fill="shapeColors[task.type]?.fill || defaultColors.fill"
+          :stroke="shapeColors[task.type]?.stroke || defaultColors.stroke"
+          stroke-width="2"
+        />
+        <rect
+          v-else-if="task.type === 'Rectangle'"
+          x="-20"
+          y="-20"
+          width="40"
+          height="40"
+          :fill="shapeColors[task.type]?.fill || defaultColors.fill"
+          :stroke="shapeColors[task.type]?.stroke || defaultColors.stroke"
+          stroke-width="2"
+        />
+        <polygon
+          v-else-if="task.type === 'Polygon'"
+          points="0,-20 20,20 -20,20"
+          :fill="shapeColors[task.type]?.fill || defaultColors.fill"
+          :stroke="shapeColors[task.type]?.stroke || defaultColors.stroke"
+          stroke-width="2"
+        />
+        <circle
+          v-else
+          cx="0"
+          cy="0"
+          r="20"
+          :fill="defaultColors.fill"
+          :stroke="defaultColors.stroke"
+          stroke-width="2"
+        />
+      </g>
+    </svg>
+    <span class="ml-3">{{ task.name }}</span>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -81,14 +73,19 @@
 </script>
 
 <style scoped>
-  :root {
-    --circle-fill: #3498db;
-    --circle-stroke: #2980b9;
-    --rectangle-fill: #e74c3c;
-    --rectangle-stroke: #c0392b;
-    --polygon-fill: #2ecc71;
-    --polygon-stroke: #27ae60;
-    --default-fill: #9b59b6;
-    --default-stroke: #8e44ad;
+  .task-shape {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .task-shape__svg {
+    width: 100px;
+    height: 100px;
+  }
+
+  .task-shape__text {
+    font-size: 12px;
+    text-align: center;
   }
 </style>

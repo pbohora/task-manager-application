@@ -27,7 +27,6 @@
 </template>
 
 <script setup lang="ts">
-  import CompletedTasks from './CompletedTasks.vue'
   import { useTaskStore } from '../stores/tasks'
 
   const taskStore = useTaskStore()
