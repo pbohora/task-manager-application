@@ -29,9 +29,9 @@ export const useTaskStore = defineStore('taskStore', {
     },
     completeTask(taskId: string) {
       const task = this.tasks.find((t) => t.id === taskId)
-    
+
       if (task) {
-        this.tasks = this.tasks.filter(t => t.id !== taskId)
+        this.tasks = this.tasks.filter((t) => t.id !== taskId)
         this.completedTasks.push(task)
       }
     }

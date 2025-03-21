@@ -1,19 +1,21 @@
 <template>
-  <v-card class="mx-auto" max-width="700" border flat>
-    <v-list-item class="pa-6">
-      <template v-slot:title> {{ task.name }} </template>
-      <template v-slot:subtitle>{{ task.type }}</template>
-      <template v-slot:append>
-        <v-btn
-          class="text-none"
-          color="primary"
-          text="Complete"
-          variant="text"
-          @click="taskStore.completeTask(task.id)"
-          slim
-        ></v-btn>
-      </template>
-    </v-list-item>
+  <v-card class="mx-auto" border flat>
+    <template #title>
+      {{ task.name }}
+    </template>
+    <template #subtitle>
+      {{ task.type }}
+    </template>
+    <template #append>
+      <v-btn
+        class="text-none"
+        color="primary"
+        text="Complete"
+        variant="text"
+        slim
+        @click="taskStore.completeTask(task.id)"
+      />
+    </template>
   </v-card>
 </template>
 

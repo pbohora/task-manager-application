@@ -1,15 +1,8 @@
 <template>
   <v-container>
-    <v-alert
-      v-if="error"
-      closable
-      color="error"
-      icon="$error"
-      title="Error"
-      :text="error"
-    ></v-alert>
-    <div class="text-center" v-if="isLoading">
-      <v-progress-circular :size="70" :width="7" color="purple" indeterminate></v-progress-circular>
+    <v-alert v-if="error" closable color="error" icon="$error" title="Error" :text="error" />
+    <div v-if="isLoading" class="text-center">
+      <v-progress-circular :size="70" :width="7" color="purple" indeterminate />
     </div>
     <NoTasks
       v-else-if="taskStore.tasks.length === 0"

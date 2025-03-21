@@ -1,20 +1,29 @@
 <template>
-  <v-row align="center" justify="center">
-    <v-col cols="12" md="4">
-      <h4 class="text-h3">Request Tasks</h4>
-    </v-col>
-    <v-col cols="12" md="4">
-      <v-btn color="primary" @click="$emit('request-tasks')"> Request Tasks </v-btn>
-    </v-col>
-  </v-row>
+  <v-card class="mx-auto" max-width="700" border flat>
+    <template #title> Completed tasks </template>
 
-  <v-empty-state
-    v-if="completedTasks.length === 0"
-    title="There are no tasks"
-    text="Click the button to request tasks"
-  />
+    <template #append>
+      <v-btn
+        block
+        class="text-none"
+        color="primary"
+        text="Request Tasks"
+        slim
+        @click="$emit('request-tasks')"
+      />
+    </template>
 
-  <CompletedTasks v-else :completedTasks="completedTasks" />
+    <v-divider />
+
+    <v-empty-state
+      v-if="completedTasks.length === 0"
+      title="There are no tasks   "
+      text="Click the button to request tasks"
+      class="mt-10"
+    />
+
+    <CompletedTasks v-else class="mt-10" :completed-tasks="completedTasks" />
+  </v-card>
 </template>
 
 <script setup lang="ts">
