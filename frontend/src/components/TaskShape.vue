@@ -71,21 +71,3 @@ const defaultColors = {
   stroke: 'var(--default-stroke, #8e44ad)'
 }
 </script>
-
-<style scoped>
-.task-shape {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.task-shape__svg {
-  width: 100px;
-  height: 100px;
-}
-
-.task-shape__text {
-  font-size: 12px;
-  text-align: center;
-}
-</style>
