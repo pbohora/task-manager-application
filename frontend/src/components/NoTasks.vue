@@ -9,32 +9,26 @@
         color="primary"
         text="Request Tasks"
         slim
-        @click="$emit('request-tasks')"
+        @click="taskStore.fetchTasks"
       />
     </template>
 
     <v-divider />
 
     <v-empty-state
-      v-if="completedTasks.length === 0"
+      v-if="taskStore.completedTasks.length === 0"
       title="There are no tasks   "
       text="Click the button to request tasks"
       class="mt-10"
     />
 
-    <CompletedTasks v-else class="mt-10" :completed-tasks="completedTasks" />
+    <CompletedTasks v-else class="mt-10" :completed-tasks="taskStore.completedTasks" />
   </v-card>
 </template>
 
 <script setup lang="ts">
-  import { type Task } from '../types'
   import CompletedTasks from './CompletedTasks.vue'
+  import { useTaskStore } from '../stores/tasks'
 
-  defineProps<{
-    completedTasks: Task[]
-  }>()
-
-  defineEmits<{
-    (event: 'request-tasks'): void
-  }>()
+  const taskStore = useTaskStore()
 </script>

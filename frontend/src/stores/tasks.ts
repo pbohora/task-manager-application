@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import axios from 'axios'
+import axios, { type AxiosResponse } from 'axios'
 
 import type { Task, TaskInfo } from '../types'
 
@@ -13,11 +13,13 @@ export const useTaskStore = defineStore('taskStore', {
   }),
 
   actions: {
-    async fetchTasks() {
+    async fetchTasks(): Promise<void> {
       this.loading = true
       this.error = null
+
       try {
-        const response = await axios.get<TaskInfo>('/api/v1/tasks')
+        const response: AxiosResponse<TaskInfo> = await axios.get<TaskInfo>('/api/v1/tasks')
+
         this.taskListName = response.data.taskListName
         this.tasks = response.data.tasks
       } catch (error) {
@@ -27,7 +29,8 @@ export const useTaskStore = defineStore('taskStore', {
         this.loading = false
       }
     },
-    completeTask(taskId: string) {
+
+    completeTask(taskId: string): void {
       const task = this.tasks.find((t) => t.id === taskId)
 
       if (task) {

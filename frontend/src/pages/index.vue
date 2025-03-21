@@ -4,12 +4,8 @@
     <div v-if="isLoading" class="text-center">
       <v-progress-circular :size="70" :width="7" color="purple" indeterminate />
     </div>
-    <NoTasks
-      v-else-if="taskStore.tasks.length === 0"
-      :completed-tasks="taskStore.completedTasks"
-      @request-tasks="taskStore.fetchTasks"
-    />
-    <TaskList v-else :tasks="taskStore.tasks" :list-name="taskStore.taskListName" />
+    <NoTasks v-else-if="taskStore.tasks.length === 0" />
+    <TaskList v-else />
   </v-container>
 </template>
 
