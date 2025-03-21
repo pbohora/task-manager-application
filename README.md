@@ -4,7 +4,7 @@
 A simple task management application built with **Vue 3**, **Vuetify**, **Pinia** and **TypeScript**, with a **Node.js** backend using **Express.js**.
 
 ## Features
-- Randomly generate and display a list of 1 to 10 tasks. Each task will be unique and varied in nature.
+- Randomly generate and display a list of 1 to 10 tasks. Each task with unique ID and random type.
 - Present the tasks in a visually organized list, where each task includes a name, type, and an option to mark it as complete.
 - Once a task is marked as complete, it moves to the "Completed Tasks" section.
 - The completed tasks are displayed alongside custom SVG icons that represent the type of task
