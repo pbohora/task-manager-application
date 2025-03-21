@@ -1,4 +1,5 @@
 // Plugins
+/// <reference types="vitest/config" />
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import Fonts from 'unplugin-fonts/vite'
@@ -75,6 +76,15 @@ export default defineConfig({
     preprocessorOptions: {
       sass: {
         api: 'modern-compiler'
+      }
+    }
+  },
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    server: {
+      deps: {
+        inline: ['vuetify']
       }
     }
   }
