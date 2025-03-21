@@ -6,6 +6,7 @@
 
 import pluginVue from 'eslint-plugin-vue'
 import vueTsEslintConfig from '@vue/eslint-config-typescript'
+import pluginPrettier from 'eslint-plugin-prettier'
 
 export default [
   {
@@ -22,6 +23,12 @@ export default [
   ...vueTsEslintConfig(),
 
   {
+    plugins: {
+      prettier: pluginPrettier
+    }
+  },
+
+  {
     rules: {
       '@typescript-eslint/no-unused-expressions': [
         'error',
@@ -30,7 +37,8 @@ export default [
           allowTernary: true
         }
       ],
-      'vue/multi-word-component-names': 'off'
+      'vue/multi-word-component-names': 'off',
+      'prettier/prettier': 'error'
     }
   }
 ]
