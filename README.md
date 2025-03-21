@@ -68,7 +68,7 @@ http://localhost:8080
    npm run dev
    ```
 4. Visit:
-http://localhost:3000
+http://localhost:3000/api/v1/tasks
 
 ## Running Tests
 ### Frontend
