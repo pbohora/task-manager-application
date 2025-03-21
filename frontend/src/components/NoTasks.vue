@@ -13,10 +13,13 @@
     title="There are no tasks"
     text="Click the button to request tasks"
   />
+
+  <CompletedTasks v-else :completedTasks="completedTasks" />
 </template>
 
 <script setup lang="ts">
   import { type Task } from '../types'
+  import CompletedTasks from './CompletedTasks.vue'
 
   defineProps<{
     completedTasks: Task[]
